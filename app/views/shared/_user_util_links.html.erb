@@ -4,13 +4,11 @@
   <% end %>
   <% if has_user_authentication_provider? %>
     <% if current_user %>
-    <li class="nav-item">
-      <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path, class: 'nav-link' %>
-    </li>
     <% unless current_user.to_s.blank? -%>
-    <li class="nav-item">
-      <%= link_to current_user, edit_user_registration_path, class: 'nav-link' %>
-    </li>
+     <button type="button" class="btn btn-light" style="margin-left: 20px;">
+      <%= link_to current_user, edit_user_registration_path, {:style=>'color:#000; text-decoration:none'} %>
+    </button>
+   
     <% end %>
     <% else %>
     <li class="nav-item">
