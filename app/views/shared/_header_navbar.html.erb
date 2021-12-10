@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+  <div class="<%= container_classes %> ml-0">
+
+    <%#= link_to application_name, root_path, class: 'lead text-white'  %>
+
+    <a href="<%= root_path %>" ><span style="display:inline-block; width:120; height:80; vertical-align: middle; padding-left: 0; margin-left: 0;"><%= image_tag('ernie.png', alt: "Home Page", size:"90x60") %></span></a><a href="<%= root_path %>" ><span style="display:inline-block; padding-left: 15px;"><font color="#fff" face="Arial" size="+1pt"><%= application_name %></font></span></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#user-util-collapse" aria-controls="user-util-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-end" id="user-util-collapse">
+      <%= render 'shared/user_util_links' %>
+    </div>
+  </div>
+</nav>
