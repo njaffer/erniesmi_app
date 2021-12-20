@@ -1,0 +1,16 @@
+New Archive
+
+<%= form_tag(save_archives_path, :enctype =>"multipart/form-data") do  %>
+
+
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="panel-title">New Archive</h5>
+      <div class="form-buttons" style="margin-top: 20px;">
+         <div class="actions">
+         <%= submit_tag 'Save' %>
+         </div>
+      </div>
+      
+      <p style="margin-top: 20px;">Title<br><%= text_field_tag "title", '',size:  60%></p>
+<% end %>      
