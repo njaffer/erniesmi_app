@@ -22,5 +22,12 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
+
+  resources :archives do
+    collection do
+      get :new
+      post :save
+    end
+  end 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

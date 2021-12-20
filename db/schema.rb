@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_200038) do
+ActiveRecord::Schema.define(version: 2021_12_18_033119) do
+
+  create_table "archives", force: :cascade do |t|
+    t.string "item_id"
+    t.string "title"
+    t.string "fname"
+    t.string "path"
+    t.string "date_received"
+    t.string "county"
+    t.string "city"
+    t.string "category"
+    t.string "state"
+    t.string "options"
+    t.string "sub_pages"
+    t.string "cover_page"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id", null: false
