@@ -88,7 +88,12 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
     config.add_facet_field 'county_ssi', label: 'County'
-   
+    config.add_facet_field 'category_ssi', label: 'Category'
+    config.add_facet_field 'category1_ssi', label: ' Sub Category 1'
+    config.add_facet_field 'category2_ssi', label: ' Sub Category 2'
+    config.add_facet_field 'category3_ssi', label: ' Sub Category 3'
+    config.add_facet_field 'category4_ssi', label: ' Sub Category 4'
+    config.add_facet_field 'category5_ssi', label: ' Sub Category 5'
     
     config.add_facet_field 'date_received_ssi', label: 'Date', :query => {
        :years_5 => { label: 'within 5 Years', fq: "date_received_ssi_ssim:[#{Time.zone.now.year - 5 } TO *]" },
@@ -100,25 +105,57 @@ class CatalogController < ApplicationController
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
-    #config.add_facet_fields_to_solr_request!
+    config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     #config.show.title_field = 'title_ssi'
     #config.add_index_field 'title_ssi', label: 'Title'
     config.add_index_field 'county_ssi', label: 'County'
+    config.add_index_field 'county1_ssi', label: 'County'
+    config.add_index_field 'county2_ssi', label: 'County'
+    config.add_index_field 'county3_ssi', label: 'County'
+    config.add_index_field 'county4_ssi', label: 'County'
+    config.add_index_field 'county5_ssi', label: 'County'
     config.add_index_field 'city_ssi', label: 'City'
+    config.add_index_field 'city1_ssi', label: 'City'
+    config.add_index_field 'city2_ssi', label: 'City'
+    config.add_index_field 'city3_ssi', label: 'City'
+    config.add_index_field 'city4_ssi', label: 'City'
+    config.add_index_field 'category_ssi', label: 'Category'
+    config.add_index_field 'category1_ssi', label: 'Category'
+    config.add_index_field 'category2_ssi', label: 'Category'
+    config.add_index_field 'category3_ssi', label: 'Category'
+    config.add_index_field 'category4_ssi', label: 'Category'
+    config.add_index_field 'category5_ssi', label: 'Category'
+    config.add_index_field 'category6_ssi', label: 'Category'
+    config.add_index_field 'category7_ssi', label: 'Category'
+    config.add_index_field 'category8_ssi', label: 'Category'
+    config.add_index_field 'category9_ssi', label: 'Category'
+    config.add_index_field 'category10_ssi', label: 'Category'
+    config.add_index_field 'category11_ssi', label: 'Category'
+    config.add_index_field 'category12_ssi', label: 'Category'
+    config.add_index_field 'category13_ssi', label: 'Category'
+    config.add_index_field 'category14_ssi', label: 'Category'
+    config.add_index_field 'category15_ssi', label: 'Category'
+    config.add_index_field 'state_ssi', label: 'State'
+    config.add_index_field 'options_ssi', label: 'Options'
+    config.add_index_field 'options1_ssi', label: 'Options'
+    config.add_index_field 'pic_year_ssi', label: 'Year'
+    
+    
     config.add_index_field 'date_received_ssi', label: 'Date'
     config.add_index_field 'date_received_ssi_ssim', label: 'Date'
+
     
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'title_ssi', label: 'Title'
-    config.add_show_field 'title_vern_ssim', label: 'Title'
+    #config.add_show_field 'title_ssi', label: 'Title'
+    #config.add_show_field 'title_vern_ssim', label: 'Title'
     config.add_show_field 'county_ssi', label: 'County'
     config.add_show_field 'city_ssi', label: 'City'
     config.add_show_field 'date_received_ssi', label: 'Date'
-  
+    config.add_show_field 'pic_year_ssi', label: 'Year' 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
     #
