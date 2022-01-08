@@ -1,7 +1,41 @@
 <% id = @document.id 
 
    @one = Archive.where("id=?",id)
+   imageurl = "http://localhost:3000/assets/tpics/"+@one.first.fname
+
 %>
-<%= image_tag('tpics/Binder40.jpg', :alt => 'image',size:'100x100')%>
-      
-  
+<p><%#= @one.first["caption"] %></p>
+<p>County: <%= @document["county_ssi"] %></p>
+<p>City: <%= @document["city_ssi"] %></p>
+<p>Category: <%= @document["category_ssi"] %></p>
+<p>Year: <%= @one.first["pyear"] %></p>
+
+<%# image_tag('tpics/Binder40.jpg', :alt => 'image',size:'100x100')%>
+<% #url = 'https://erniesmichigan.com/GregPics3/Corning%20Mich%201894-03-10%20-%20m9977_edited-1.jpg'
+#url = 'http://localhost:3000/assets/tpics/Binder40-d6eb7324add29d74f42dc6e4ac42bf1e69789da7e929be5dc2d43c598dbd27ab.jpg' 
+#imageurl = 'http://localhost:3000/assets/tpics/Binder40.jpg' 
+url = image_url(imageurl)
+%>
+<%#<div id="starrynight_viewer" style="height: 400px;></div> %>
+
+<%#= seadragon({id: "starrynight_viewer", tileSources: "/www/public_html/deep_zoom_images/starrynight.dzi"}) %>
+<div id="openseadragon1" style="width: 800px; height: 600px;"></div>
+<script src="/openseadragon/openseadragon.min.js"></script>
+
+<script type="text/javascript">
+    var viewer = OpenSeadragon({
+        id: "openseadragon1",
+        
+        prefixUrl: "http://localhost:3000/assets/images/",
+
+        navigatorDisplayRegionColor: '#000',
+        tileSources: {
+            type: 'image',
+            url:  '<%=url %>'
+        }
+    });
+</script>
+
+
+
+

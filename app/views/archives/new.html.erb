@@ -1,4 +1,4 @@
-New Archive
+<h4>New Archive</h4>
 
 <%= form_tag(save_archives_path, :enctype =>"multipart/form-data") do  %>
 
@@ -13,4 +13,23 @@ New Archive
       </div>
       
       <p style="margin-top: 20px;">Title<br><%= text_field_tag "title", '',size:  60%></p>
-<% end %>      
+<% end %> 
+
+<h4> Import List </h4>
+
+<%= form_tag("import", :enctype =>"multipart/form-data") do %>
+   <div class="row">
+     <div class="field">
+       <%= label_tag :file %>
+       <%= file_field_tag :file,  :required => true  %>
+     </div>
+   </div>
+
+   <div class="row">
+   <div class="actions">
+      <%= submit_tag 'Next' %>
+   </div>
+
+<% end %>   
+
+  
