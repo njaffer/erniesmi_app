@@ -62,7 +62,7 @@ class CreateArchives < ActiveRecord::Migration[6.1]
       t.string :options2
       t.float :cost
       t.float :price
-      t.flace :picval
+      t.float :picval
       t.boolean :cover_page
       t.boolean :pic_status
       t.integer :ptype
