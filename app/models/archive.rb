@@ -2,6 +2,8 @@ class Archive < ApplicationRecord
    after_save :index_record
    before_destroy :remove_from_index
 
+   #has_one_attached :fname
+
    attr_accessor :title, :county,:city,:category, :county1,:city1,:category1, :county2,:city2,:category2,
    :county3,:city3,:category3,:county4,:city4,:category4, :category5, :category6, :category7, :category8, :category9, :category10,
   :category11, :category12, :category13,:category14, :category15, :category16, :category17, :category18, :category19

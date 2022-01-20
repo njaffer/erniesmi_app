@@ -11,6 +11,11 @@ class ArchivesController < ApplicationController
 		
 	end	
 
+    def post_params
+    
+      params.require(:archive).permit(:fname)
+    end
+      
     def import
 	  uploaded_csv = params[:file]
       csv_text = File.read(uploaded_csv.path)
@@ -188,4 +193,5 @@ a = Archive.new
      a.save! 
       end
     end
+
 end
