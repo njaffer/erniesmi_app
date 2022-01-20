@@ -61,6 +61,9 @@ gem 'blacklight', '>= 7.0'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
+
+gem 'aws-sdk-rails'
+gem "aws-sdk-s3", require: false
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'bootstrap', '~> 4.0'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'

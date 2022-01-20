@@ -1,7 +1,15 @@
-<% id = @document.id 
+<% 
+   require 'aws-sdk-s3'
 
+   id = @document.id 
    @one = Archive.where("id=?",id)
-   imageurl = "http://localhost:3000/assets/tpics/"+@one.first.fname
+   fname =  @one.first.fname
+
+   if ( fname.nil? )
+    imageurl = "https://ernie-tpics.s3.amazonaws.com/tpics/"
+   else 
+    imageurl = "https://ernie-tpics.s3.amazonaws.com/"+@one.first.fname  
+   end
 
 %>
 <p><%#= @one.first["caption"] %></p>
@@ -11,6 +19,8 @@
 <p>Year: <%= @one.first["pyear"] %></p>
 
 <%# image_tag('tpics/Binder40.jpg', :alt => 'image',size:'100x100')%>
+<%# image_tag('02-16-2009-10-48-03-609.jpg', :alt => 'image',size:'100x100')%>
+
 <% #url = 'https://erniesmichigan.com/GregPics3/Corning%20Mich%201894-03-10%20-%20m9977_edited-1.jpg'
 #url = 'http://localhost:3000/assets/tpics/Binder40-d6eb7324add29d74f42dc6e4ac42bf1e69789da7e929be5dc2d43c598dbd27ab.jpg' 
 #imageurl = 'http://localhost:3000/assets/tpics/Binder40.jpg' 
