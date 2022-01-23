@@ -58,9 +58,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'blacklight', '>= 7.0'
 
-group :development, :test do
-  gem 'solr_wrapper', '>= 0.3'
-end
+#group :development, :test do
+ 
+#end
 
 gem 'aws-sdk-rails'
 gem "aws-sdk-s3", require: false
@@ -71,3 +71,10 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'devise-guests', '~> 0.8'
 gem 'blacklight-marc', '>= 7.0.0.rc1', '< 8'
+ gem 'solr_wrapper', '>= 0.3'
+
+ gem 'capistrano', '~> 3.7'
+ gem 'capistrano-rails', '~> 1.2'
+ gem 'capistrano-yarn'
+ gem 'capistrano3-puma'
+

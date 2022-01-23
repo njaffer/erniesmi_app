@@ -1,5 +1,5 @@
 <% 
-   require 'aws-sdk-s3'
+   
 
    id = @document.id 
    @one = Archive.where("id=?",id)
@@ -8,7 +8,7 @@
    if ( fname.nil? )
     imageurl = "https://ernie-tpics.s3.amazonaws.com/tpics/"
    else 
-    imageurl = "https://ernie-tpics.s3.amazonaws.com/"+@one.first.fname  
+    imageurl = "https://ernie-tpics.s3.amazonaws.com/tpics/"+@one.first.fname  
    end
 
 %>
