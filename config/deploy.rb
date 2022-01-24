@@ -22,7 +22,7 @@ set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/spree', 'public/assets')
 # set :linked_dirs, fetch(:linked_dirs, [])
 
-set :rvm_ruby_version, '2.5.1'
+set :rvm_ruby_version, '2.7.2'
 
 # Default value for default_env is {}
 # set :default_env, { rails_env: "development" }
@@ -79,3 +79,10 @@ namespace :deploy do
       end
     end
   end
+end
+
+after 'deploy:updated', :updated_cache do 
+  on roles(:app) do
+     execute :chmod, "-R 777 #{fetch(:deploy_to)}/current/#{fetch(:cache_path)}"
+  end
+end
