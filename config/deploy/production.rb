@@ -1,7 +1,7 @@
 set :stage, :production
 set :rails_env, :production
-set :branch, “master”
-server “your_ip_address”, user: “your_username”, roles: %w{web app db}
+set :branch, 'master'
+server '18.191.180.153',user: 'ubuntu',roles: %w{web app db}
 
 
 # server-based syntax
